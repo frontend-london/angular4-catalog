@@ -16,7 +16,7 @@ export class EditItemComponent implements OnInit {
     name:'',
     description: '',
     location:'',
-    phone:'',
+    category:'',
     balance:0
   }
 

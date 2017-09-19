@@ -3,6 +3,6 @@ export interface Item{
     name?:string;
     description?:string;
     location?:string;
-    phone?:string;
+    category?:string;
     balance?:number;
 }
