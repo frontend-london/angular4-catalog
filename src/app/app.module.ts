@@ -22,6 +22,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 // Service Imports
 import { ItemService } from './services/item.service';
+import { CategoryService } from './services/category.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { RegisterGuard } from './guards/register.guard';
@@ -79,6 +80,7 @@ export const firebaseConfig = {
     AngularFireAuth,
     AngularFireDatabase,
     ItemService,
+    CategoryService,
     AuthService,
     AuthGuard,
     RegisterGuard,
