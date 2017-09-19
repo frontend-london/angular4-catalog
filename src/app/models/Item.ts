@@ -2,7 +2,7 @@ export interface Item{
     $key?:string;
     name?:string;
     description?:string;
-    email?:string;
+    location?:string;
     phone?:string;
     balance?:number;
 }

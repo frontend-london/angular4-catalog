@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  email:string;
+  location:string;
   password:string;
 
   constructor(
@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(){
-    this.authService.register(this.email, this.password)
+    this.authService.register(this.location, this.password)
       .then((res) => {
         this.flashMessagesService.show('New user registered', {cssClass:'alert-success', timeout:4000});
         this.router.navigate(['/']);

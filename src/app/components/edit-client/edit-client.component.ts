@@ -15,7 +15,7 @@ export class EditItemComponent implements OnInit {
   item:Item = {
     name:'',
     description: '',
-    email:'',
+    location:'',
     phone:'',
     balance:0
   }

@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email:string;
+  location:string;
   password:string;
 
   constructor(
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    this.authService.login(this.email, this.password)
+    this.authService.login(this.location, this.password)
       .then((res) => {
         this.flashMessagesService.show('You are logged in', { cssClass: 'alert-success', timeout: 4000 });
         this.router.navigate(['/']);

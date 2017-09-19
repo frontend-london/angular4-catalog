@@ -11,7 +11,7 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
-      <th>Email</th>
+      <th>location</th>
       <th>Balance</th>
       <th></th>
     </tr>
@@ -20,7 +20,7 @@
     <tr *ngFor="let item of items">
       <td>{{item.$key}}</td>
       <td>{{item.name}} {{item.description}}</td>
-      <td>{{item.email}}</td>
+      <td>{{item.location}}</td>
       <td>{{item.balance | currency:"USD":true}}</td>
       <td><a [routerLink]="['/item/'+item.$key]" href="" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
     </tr>
