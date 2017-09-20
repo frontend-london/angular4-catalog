@@ -14,6 +14,7 @@ import { ItemsComponent } from './components/items/items.component';
 import { ItemDetailsComponent } from './components/item-details/item-details.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { EditItemComponent } from './components/edit-item/edit-item.component';
+import { CategoryDetailsComponent } from './components/category-details/category-details.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -35,10 +36,11 @@ const appRoutes: Routes = [
   {path:'add-item', component:AddItemComponent, canActivate:[AuthGuard]},
   {path:'item/:id', component:ItemDetailsComponent, canActivate:[AuthGuard]},
   {path:'edit-item/:id', component:EditItemComponent, canActivate:[AuthGuard]},
+  {path:'category/:id', component:CategoryDetailsComponent, canActivate:[AuthGuard]},
   {path:'settings', component:SettingsComponent, canActivate:[AuthGuard]},
   {path:'**', component:PageNotFoundComponent}
 ];
-
+ 
 export const firebaseConfig = {
   // apiKey: "AIzaSyBUgtGTUjRzxisD_ZRvNf3KkcOydUlrGws",
   // authDomain: "test-56315.firebaseapp.com",
@@ -60,6 +62,7 @@ export const firebaseConfig = {
     DashboardComponent,
     ItemsComponent,
     ItemDetailsComponent,
+    CategoryDetailsComponent,
     AddItemComponent,
     EditItemComponent,
     NavbarComponent,

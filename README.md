@@ -1,6 +1,6 @@
-# Items
+# Catalog of Items
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.2.
+This project was written in Angular 4, generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.2.
 
 ## Development server
 

@@ -9,7 +9,7 @@
   </form>
 </div>
 
-<table *ngIf="(categories.length + items.length) > 0;else noItems" class="table table-striped"></table>
+<table *ngIf="((categories?categories.length:0) + (items?items.length:0)) > 0;else noItems" class="table table-striped"></table>
 <ul class="ul-categories">
     <li *ngFor="let item of categories">
       <a style="background-image: url('images/categories/21.jpg');" href="category/{{item.$key}}">{{item.$key}} {{item.name}} {{item.description}}</a>
@@ -23,4 +23,4 @@
 <ng-template #noItems>
   <hr>
   <h5>There are no items in this category</h5>
-</ng-template>
+</ng-template> 

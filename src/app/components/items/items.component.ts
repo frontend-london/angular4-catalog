@@ -32,7 +32,7 @@ export class ItemsComponent implements OnInit {
       // debugger;
       this.categories = categories;
     });
-  }
+  } 
 
   getTotalOwed(){
     let total = 0;
