@@ -1,68 +1,26 @@
-<div class="row">
-  <div class="col-md-12">
-    <h2><i class="fa fa-users"></i> Categories</h2>
-  </div>
+<h2 class="text-center text-uppercase">
+  List of Items:
+</h2>
+<div id="searcher">
+  <form method="get" id="form-search" action=".">
+    Szukajka:
+    <input type="text" name="search" id="search" value="" autofocus />
+    <input type="submit" value="Znajdź" />
+  </form>
 </div>
-<table *ngIf="categories?.length > 0;else noCategories" class="table table-striped">
-  <thead class="thead-inverse">
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Balance</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of categories">
-      <td>{{item.$key}}</td>
-      <td>{{item.name}} {{item.description}}</td>
-      <td>{{item.location}}</td>
-      <td>{{item.balance | currency:"USD":true}}</td>
-      <td><a [routerLink]="['/item/'+item.$key]" href="" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
-    </tr>
-  </tbody>
-</table>
 
-<ng-template #noCategories>
-  <hr>
-  <h5>There are no categories in the system</h5>
-</ng-template>
+<table *ngIf="(categories.length + items.length) > 0;else noItems" class="table table-striped"></table>
+<ul class="ul-categories">
+    <li *ngFor="let item of categories">
+      <a style="background-image: url('images/categories/21.jpg');" href="category/{{item.$key}}">{{item.$key}} {{item.name}} {{item.description}}</a>
+    </li>
 
-
-
-
-
-<div class="row">
-  <div class="col-md-6">
-    <h2><i class="fa fa-users"></i> Items</h2>
-  </div>
-  <div class="col-md-6">
-    <h5 class="pull-right text-muted">Total Owed: {{totalOwed | currency:"USD":true}}</h5>
-  </div>
-</div>
-<table *ngIf="items?.length > 0;else noItems" class="table table-striped">
-  <thead class="thead-inverse">
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Balance</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of items">
-      <td>{{item.$key}}</td>
-      <td>{{item.name}} {{item.description}}</td>
-      <td>{{item.location}}</td>
-      <td>{{item.balance | currency:"USD":true}}</td>
-      <td><a [routerLink]="['/item/'+item.$key]" href="" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
-    </tr>
-  </tbody>
-</table>
+    <li *ngFor="let item of items">
+      <a style="background-image: url('images/categories/21.jpg');" [routerLink]="['/item/'+item.$key]" href="">{{item.$key}} {{item.name}} {{item.description}}</a>
+    </li>
+</ul>
 
 <ng-template #noItems>
   <hr>
-  <h5>There are no items in the system</h5>
+  <h5>There are no items in this category</h5>
 </ng-template>
