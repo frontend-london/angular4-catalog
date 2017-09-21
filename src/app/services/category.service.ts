@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router, ActivatedRoute, Params, NavigationEnd } from '@angular/router';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { Category } from '../models/Category';
@@ -9,9 +10,28 @@ export class CategoryService {
   category: FirebaseObjectObservable<any>;
 
   constructor(
-    public af:AngularFireDatabase
+    public af:AngularFireDatabase,
+    public router:Router,
   ) { 
-    this.categories = this.af.list('/categories') as FirebaseListObservable<Category[]>;
+    var self = this;
+  
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) { 
+        var id = self.router.routerState.snapshot.root.firstChild.params.id ? self.router.routerState.snapshot.root.firstChild.params.id : '';
+        self.categories = self.af.list('/categories',
+          {
+            query: {
+              limitToLast: 10,
+              orderByChild: 'category',
+              equalTo: id,
+            }
+          }
+        ); 
+      }
+    });
+
+
+    // this.categories = this.af.list('/categories') as FirebaseListObservable<Category[]>;
   }
 
   getCategories(){

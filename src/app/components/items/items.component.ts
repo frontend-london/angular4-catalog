@@ -30,10 +30,10 @@ export class ItemsComponent implements OnInit {
       this.getTotalOwed();
     });
 
-    // this.categoryService.getCategories().subscribe(categories => {
-    //   // debugger;
-    //   this.categories = categories;
-    // });
+    this.categoryService.getCategories().subscribe(categories => {
+      // debugger;
+      this.categories = categories;
+    });
   } 
 
   getTotalOwed(){
