@@ -1,0 +1,26 @@
+<h2 class="text-center text-uppercase">
+  List of Items:
+</h2>
+<div id="searcher">
+  <form method="get" id="form-search" action=".">
+    Szukajka:
+    <input type="text" name="search" id="search" value="" autofocus />
+    <input type="submit" value="Znajdź" />
+  </form>
+</div>
+
+<table *ngIf="((categories?categories.length:0) + (items?items.length:0)) > 0;else noItems" class="table table-striped"></table>
+<ul class="ul-categories">
+    <li *ngFor="let item of categories">
+      <a style="background-image: url('images/categories/21.jpg');" href="category/{{item.$key}}">{{item.$key}} {{item.name}} {{item.description}}</a>
+    </li>
+
+    <li *ngFor="let item of items">
+      <a style="background-image: url('images/categories/21.jpg');" [routerLink]="['/item/'+item.$key]" href="">{{item.$key}} {{item.name}} {{item.description}}</a>
+    </li>
+</ul>
+
+<ng-template #noItems>
+  <hr>
+  <h5>There are no items in this category</h5>
+</ng-template> 

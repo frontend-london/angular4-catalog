@@ -1,26 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../../services/item.service';
 import { CategoryService } from '../../services/category.service';
-import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Item } from '../../models/Item';
 import { Category } from '../../models/Category';
 
 @Component({
   selector: 'app-items',
-  templateUrl: './items.component.html',
-  styleUrls: ['./items.component.css']
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.css']
 })
-export class ItemsComponent implements OnInit {
-  id:string;
+export class CategoryComponent implements OnInit {
   items:any[];
   categories:any[];
   totalOwed:number;
 
   constructor(
-      public router:Router,
-      public route:ActivatedRoute,
+    // [
       public itemService:ItemService,
       public categoryService:CategoryService
+    // ]
   ) { }
 
   ngOnInit() {
