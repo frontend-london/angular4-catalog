@@ -15,6 +15,7 @@ import { ItemDetailsComponent } from './components/item-details/item-details.com
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { EditItemComponent } from './components/edit-item/edit-item.component';
 // import { CategoryComponent } from './components/category/category.component';
+import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -63,6 +64,7 @@ export const firebaseConfig = {
     DashboardComponent,
     ItemsComponent,
     ItemDetailsComponent,
+    HeaderComponent,
     // CategoryComponent,
     AddItemComponent,
     EditItemComponent,
